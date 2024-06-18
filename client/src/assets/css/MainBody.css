@@ -1,3 +1,26 @@
+/* MainBody.css */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
 .MainBodyDiv {
   display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  text-align: center; /* Center the h1 horizontally */
+}
+
+.navSplit {
+  display: flex;
+  flex-grow: 1;
+}
+
+.pagesDiv {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
 }

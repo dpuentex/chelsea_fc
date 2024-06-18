@@ -1,6 +1,7 @@
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import * as IoIcons from "react-icons/io";
+import * as TbIcons from "react-icons/tb";
 
 export const SidebarData = [
   {
@@ -16,9 +17,9 @@ export const SidebarData = [
     cName: "nav-text",
   },
   {
-    title: "Schedule",
-    path: "/schedule",
-    icon: <FaIcons.FaCartPlus />,
+    title: "Fixtures",
+    path: "/fixtures",
+    icon: <TbIcons.TbBuildingStadium />,
     cName: "nav-text",
   },
   {

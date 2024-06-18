@@ -22,15 +22,18 @@ function PlayersPage() {
       });
   }, []);
   return (
-    <div>
+    <div className="playersPageDiv">
       {players.map((player) => (
         <Link to={`/player/${player.player_id}`} key={player.player_id}>
-          <div>
-            <p>{player.player_name}</p>
-            <p>{player.player_number}</p>
-            <p>{player.dob}</p>
-            <p>{player.country}</p>
+          <div className="playerCardHolder">
+            <div className="playerInfo">
+              <p>{player.player_name}</p>
+              <p>{player.player_number}</p>
+              <p>{player.dob}</p>
+              <p>{player.country}</p>
+            </div>
             <img
+              className="profilePic"
               src={player.profile_pic}
               alt={`${player.player_name}'s profile`}
             />

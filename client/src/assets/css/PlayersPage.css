@@ -3,3 +3,29 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.playersPageDiv {
+  display: flex;
+  flex-direction: column;
+}
+
+.playerCardHolder {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin: 1em;
+  padding: 1em;
+  background-color: #283d8f;
+  color: white;
+  border-radius: 15px;
+}
+
+.playerInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.profilePic {
+  width: 50%;
+}
