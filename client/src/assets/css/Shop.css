@@ -1,0 +1,25 @@
+.ShopHeaderDiv {
+  background-color: #283d8f;
+}
+
+.shopNav {
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  padding: 1em;
+}
+
+.ShopNavBtn {
+  cursor: pointer;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 15px;
+  padding: 1em;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.ShopNavBtn:hover {
+  background-color: #33a3ff;
+  transform: scale(1.05);
+}

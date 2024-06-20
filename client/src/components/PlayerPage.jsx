@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import "../assets/css/PlayerPage.css";
 
 function PlayerPage() {
   const { id } = useParams();
@@ -24,15 +25,15 @@ function PlayerPage() {
     <div className="playerPageBody">
       {player && (
         <div className="playerProfile">
+          <img
+            src={player.profile_pic}
+            alt={`${player.player_name}'s profile`}
+          />
           <div className="playerInfo">
             <p>{player.player_name}</p>
             <p>{player.player_number}</p>
             <p>{player.dob}</p>
             <p>{player.country}</p>
-            <img
-              src={player.profile_pic}
-              alt={`${player.player_name}'s profile`}
-            />
           </div>
         </div>
       )}
