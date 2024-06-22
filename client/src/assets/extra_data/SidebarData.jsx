@@ -2,6 +2,7 @@ import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import * as IoIcons from "react-icons/io";
 import * as TbIcons from "react-icons/tb";
+import * as TiIcons from "react-icons/ti";
 
 export const SidebarData = [
   {
@@ -19,6 +20,12 @@ export const SidebarData = [
   {
     title: "Fixtures",
     path: "/fixtures",
+    icon: <TiIcons.TiTicket />,
+    cName: "nav-text",
+  },
+  {
+    title: "Stanford Bridge",
+    path: "/bridge",
     icon: <TbIcons.TbBuildingStadium />,
     cName: "nav-text",
   },
@@ -32,12 +39,6 @@ export const SidebarData = [
     title: "Support",
     path: "/support",
     icon: <IoIcons.IoMdHelpCircle />,
-    cName: "nav-text",
-  },
-  {
-    title: "Contact Us",
-    path: "/contact-us",
-    icon: <FaIcons.FaEnvelopeOpenText />,
     cName: "nav-text",
   },
 ];
