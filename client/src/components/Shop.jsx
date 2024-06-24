@@ -61,16 +61,26 @@ function Jersey() {
   return (
     <div className="shopsPageDiv">
       {shops.map((shop) => (
-        <Link to={`/shop/${shop.product_id}`} key={shop.product_id}>
-          <div className="shopCardHolder">
+        <div className="shopCardHolder" key={shop.product_id}>
+          <Link to={`/shop/${shop.product_id}`} key={shop.product_id}>
             <div className="shopInfo">
               <img src={shop.product_pic} alt="" className="product_pic" />
               <p>{shop.product_name}</p>
               <p>{shop.maker}</p>
-              <button className="addToCartBtn">Add to Cart</button>
             </div>
+          </Link>
+
+          <div className="shopAction">
+            <select className="selectSizeBtn">
+              <option value="">Select Size</option>
+              <option value="S">Small</option>
+              <option value="M">Medium</option>
+              <option value="L">Large</option>
+            </select>
           </div>
-        </Link>
+
+          <button className="addToCartBtn">Add to Cart</button>
+        </div>
       ))}
     </div>
   );
