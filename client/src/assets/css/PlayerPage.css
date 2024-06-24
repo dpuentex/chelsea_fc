@@ -1,6 +1,42 @@
+.playerPageBody {
+  width: 100vw;
+}
+
 .playerProfile {
   background-color: #283d8f;
-  padding: 4em;
-  color: white;
+
+  padding-top: 1.5em;
+}
+
+.profilePic {
+  width: 40vh;
+}
+
+.playerInf {
+  color: #283d8f;
+}
+
+.playerStats {
+  margin: 1em;
+  padding: 1em;
+  background-color: #33a3ff;
   border-radius: 15px;
+
+  text-align: center;
+}
+
+.playerStats h3 {
+  font-size: 1.5em;
+  margin-bottom: 1em;
+}
+
+.playerStats p {
+  font-size: 1.2em;
+  margin-bottom: 0.5em;
+}
+
+.card {
+  vertical-align: middle;
+  margin-right: 5px;
+  width: 20px;
 }

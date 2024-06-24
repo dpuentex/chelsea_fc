@@ -4,22 +4,29 @@ require("dotenv").config();
 
 const db = require("./models");
 const players = require("./controllers/playersController");
+const shops = require("./controllers/shopsController");
 
-const { Player } = db;
+const { Player, Shop } = db;
 
-//Middlewear config
+//Middleware config
 app.use(express.json());
 
 app.use("/api/players", players);
+app.use("/api/shops", shops);
 
 //ROUTES
 app.get("/", async (req, res) => {
   try {
-    const players = await Player.findAll();
-    res.send({ players });
+    const [players, shops] = await Promise.all([
+      Player.findAll(),
+      Shop.findAll(),
+    ]);
+
+    const data = { players, shops };
+    res.send(data);
   } catch (error) {
-    console.error("ERROR while fetching DATA", error);
-    res.status(500).send({ message: "Internal server error" });
+    console.log("ERROR while fetching DATA", error);
+    res.status(505).send({ message: "Internal server error" });
   }
 });
 

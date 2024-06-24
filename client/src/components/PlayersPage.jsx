@@ -29,8 +29,6 @@ function PlayersPage() {
             <div className="playerInfo">
               <p>{player.player_name}</p>
               <p>{player.player_number}</p>
-              <p>{player.dob}</p>
-              <p>{player.country}</p>
             </div>
             <img
               className="profilePic"

@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "../assets/css/Shop.css";
 
 function ShopNav({ handleSelectionChange }) {
@@ -39,7 +40,40 @@ function ShopHome() {
 }
 
 function Jersey() {
-  return <h1>Jersey</h1>;
+  const [shops, setShops] = useState([]);
+
+  useEffect(() => {
+    // Fetch all             players data from your backend API
+    fetch("/api/shops")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setShops(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching players data:", error);
+      });
+  }, []);
+  return (
+    <div className="shopsPageDiv">
+      {shops.map((shop) => (
+        <Link to={`/shop/${shop.product_id}`} key={shop.product_id}>
+          <div className="shopCardHolder">
+            <div className="shopInfo">
+              <img src={shop.product_pic} alt="" className="product_pic" />
+              <p>{shop.product_name}</p>
+              <p>{shop.maker}</p>
+              <button className="addToCartBtn">Add to Cart</button>
+            </div>
+          </div>
+        </Link>
+      ))}
+    </div>
+  );
 }
 
 function Traning() {
@@ -60,10 +94,12 @@ function Shop() {
     <>
       <div className="MainShopBodyDiv">
         <ShopNav handleSelectionChange={handleSelectionChange} />
-        {currentSelection === "Jersey" && <Jersey />}
-        {currentSelection === "ShopHome" && <ShopHome />}
-        {currentSelection === "Training" && <Traning />}
-        {currentSelection === "Cart" && <Cart />}
+        <div className="shopsDiv">
+          {currentSelection === "Jersey" && <Jersey />}
+          {currentSelection === "ShopHome" && <ShopHome />}
+          {currentSelection === "Training" && <Traning />}
+          {currentSelection === "Cart" && <Cart />}
+        </div>
       </div>
     </>
   );

@@ -23,3 +23,11 @@
   background-color: #33a3ff;
   transform: scale(1.05);
 }
+
+.MainShopBodyDiv {
+  width: 100vw;
+}
+
+.shopsPageDiv {
+  display: flex;
+}
