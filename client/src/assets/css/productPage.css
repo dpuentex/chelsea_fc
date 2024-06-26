@@ -1,0 +1,47 @@
+.productPageDiv {
+  width: 100vw;
+  height: 100vh;
+}
+
+.productPageContainer {
+  display: flex;
+}
+
+.product_pic2 {
+  width: 50vw;
+}
+
+.productInfoDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border: solid #33a3ff;
+  width: 100vw;
+  border-radius: 15px;
+}
+
+.productDetails {
+  padding: 1em;
+}
+
+.shopAction {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.selectSizeBtn {
+  width: 10vw;
+  height: 5vh;
+}
+
+.addToCartBu†ton {
+  width: 10vw;
+  height: 5vh;
+  margin: 1.5em;
+  border-radius: 4px;
+  border: none;
+  background-color: #283d8f;
+  color: white;
+}

@@ -1,8 +1,8 @@
-const players = require("express").Router();
+const shops = require("express").Router();
 const db = require("../models");
 const { Shop } = db;
 
-players.get("/", async (req, res) => {
+shops.get("/", async (req, res) => {
   try {
     const shopData = await Shop.findAll();
     console.log("/shops/ was hit in your shopsController");
@@ -13,12 +13,12 @@ players.get("/", async (req, res) => {
   }
 });
 
-players.get("/:id", async (req, res) => {
+shops.get("/:id", async (req, res) => {
   try {
     const shopId = req.params.id;
     const shopData = await Shop.findByPk(shopId);
     if (shopData) {
-      console.log(`/shop/${shopId} was hit in your playersController`);
+      console.log(`/shop/${shopId} was hit in your shopsController`);
       res.send(shopData);
     } else {
       res.status(404).send({ message: "Shop not found" });
@@ -29,4 +29,4 @@ players.get("/:id", async (req, res) => {
   }
 });
 
-module.exports = players;
+module.exports = shops;

@@ -7,6 +7,7 @@ import Header from "./Header";
 import Fixtures from "./Fixtures";
 import Stadium from "./stadium";
 import Shop from "./Shop";
+import ProductPage from "./productPage";
 import SupportPage from "./SupportPage";
 import "../assets/css/MainBody.css";
 
@@ -26,6 +27,7 @@ function MainBody() {
                 <Route path="/fixtures" element={<Fixtures />} />
                 <Route path="/bridge" element={<Stadium />} />
                 <Route path="/shop" element={<Shop />} />
+                <Route path="/shop/:id" element={<ProductPage />} />
                 <Route path="/support" element={<SupportPage />} />
               </Routes>
             </div>
