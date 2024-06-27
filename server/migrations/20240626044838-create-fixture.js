@@ -9,7 +9,10 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      opponent: {
+      homeTeam: {
+        type: Sequelize.STRING,
+      },
+      awayTeam: {
         type: Sequelize.STRING,
       },
       location: {
@@ -19,6 +22,12 @@ module.exports = {
         type: Sequelize.DATE,
       },
       competition: {
+        type: Sequelize.STRING,
+      },
+      homeTeam_logo: {
+        type: Sequelize.STRING,
+      },
+      awayTeam_logo: {
         type: Sequelize.STRING,
       },
     });

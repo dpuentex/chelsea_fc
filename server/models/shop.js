@@ -26,6 +26,9 @@ module.exports = (sequelize, DataTypes) => {
       maker: {
         type: DataTypes.STRING,
       },
+      price: {
+        type: DataTypes.INTEGER,
+      },
       sizeSInven: {
         type: DataTypes.INTEGER,
       },
@@ -34,6 +37,9 @@ module.exports = (sequelize, DataTypes) => {
       },
       sizeLInven: {
         type: DataTypes.INTEGER,
+      },
+      category: {
+        type: DataTypes.STRING,
       },
       product_pic: {
         type: DataTypes.STRING,

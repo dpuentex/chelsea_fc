@@ -1,31 +1,44 @@
 "use strict";
 
-const fixture = require("../models/fixture");
-
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.bulkInsert("fixtures", [
       {
         fixture_id: 1,
-        opponent: "Liverpool FC",
+        homeTeam: "Chelsea FC",
+        awayTeam: "Liverpool FC",
         location: "Stamford Bridge, London",
-        kick_off: "",
+        kick_off: new Date("1987-08-19"),
         competition: "Premier League",
+        homeTeam_logo:
+          "https://upload.wikimedia.org/wikipedia/en/thumb/c/cc/Chelsea_FC.svg/1200px-Chelsea_FC.svg.png",
+        awayTeam_logo:
+          "https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg",
       },
       {
         fixture_id: 2,
-        opponent: "West-Ham FC",
-        location: "Londo Stadium, London",
-        kick_off: "",
+        homeTeam: "West Ham FC",
+        awayTeam: "Chelsea",
+        location: "London Stadium, London",
+        kick_off: new Date("1987-08-19"),
         competition: "Premier League",
+        homeTeam_logo:
+          "https://upload.wikimedia.org/wikipedia/sco/thumb/c/c2/West_Ham_United_FC_logo.svg/922px-West_Ham_United_FC_logo.svg.png",
+        awayTeam_logo:
+          "https://upload.wikimedia.org/wikipedia/en/thumb/c/cc/Chelsea_FC.svg/1200px-Chelsea_FC.svg.png",
       },
       {
         fixture_id: 3,
-        opponent: "Luton Town FC",
-        location: "Londo Stadium, London",
-        kick_off: "",
+        homeTeam: "Chelsea FC",
+        awayTeam: "Luton Town FC",
+        location: "Stamford Bridge, London",
+        kick_off: new Date("1987-08-19"),
         competition: "Premier League",
+        homeTeam_logo:
+          "https://upload.wikimedia.org/wikipedia/en/thumb/c/cc/Chelsea_FC.svg/1200px-Chelsea_FC.svg.png",
+        awayTeam_logo:
+          "https://upload.wikimedia.org/wikipedia/en/9/9d/Luton_Town_logo.svg",
       },
     ]);
   },

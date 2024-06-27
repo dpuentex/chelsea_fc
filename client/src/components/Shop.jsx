@@ -18,12 +18,12 @@ function ShopNav({ handleSelectionChange }) {
         >
           JERSEYS
         </li>
-        <li
+        <i
           className="ShopNavBtn"
           onClick={() => handleSelectionChange("Training")}
         >
           TRANING
-        </li>
+        </i>
         <li
           className="ShopNavBtn"
           onClick={() => handleSelectionChange("Cart")}
@@ -43,7 +43,6 @@ function Jersey({ addToCart }) {
   const [shops, setShops] = useState([]);
 
   useEffect(() => {
-    // Fetch all             players data from your backend API
     fetch("/api/shops")
       .then((response) => {
         if (!response.ok) {
@@ -52,10 +51,12 @@ function Jersey({ addToCart }) {
         return response.json();
       })
       .then((data) => {
-        setShops(data);
+        // Filter only the items with category "Jersey"
+        const jerseyItems = data.filter((item) => item.category === "Jersey");
+        setShops(jerseyItems);
       })
       .catch((error) => {
-        console.error("Error fetching players data:", error);
+        console.error("Error fetching shop data:", error);
       });
   }, []);
 
@@ -63,11 +64,12 @@ function Jersey({ addToCart }) {
     <div className="shopsPageDiv">
       {shops.map((shop) => (
         <div className="shopCardHolder" key={shop.product_id}>
-          <Link to={`/shop/${shop.product_id}`} key={shop.product_id}>
+          <Link to={`/shop/${shop.product_id}`}>
             <div className="shopInfo">
               <img src={shop.product_pic} alt="" className="product_pic" />
               <p>{shop.product_name}</p>
               <p>{shop.maker}</p>
+              <h2 className="price">${shop.price}</h2>
             </div>
           </Link>
 
@@ -89,12 +91,64 @@ function Jersey({ addToCart }) {
   );
 }
 
-function Traning() {}
+function Traning({ addToCart }) {
+  const [trainingItems, setTrainingItems] = useState([]);
+
+  useEffect(() => {
+    fetch("/api/shops")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        // Filter only the items with category "Training"
+        const trainingData = data.filter(
+          (item) => item.category === "Training"
+        );
+        setTrainingItems(trainingData);
+      })
+      .catch((error) => {
+        console.error("Error fetching training data:", error);
+      });
+  }, []);
+
+  return (
+    <div className="shopsPageDiv">
+      {trainingItems.map((shop) => (
+        <div className="shopCardHolder" key={shop.product_id}>
+          <Link to={`/shop/${trainingItems.product_id}`}>
+            <div className="shopInfo">
+              <img src={shop.product_pic} alt="" className="product_pic" />
+              <p>{shop.product_name}</p>
+              <p>{shop.maker}</p>
+              <h2 className="price">${shop.price}</h2>
+            </div>
+          </Link>
+
+          <div className="shopAction">
+            <select className="selectSizeBtn">
+              <option value="">Select Size</option>
+              <option value="S">Small</option>
+              <option value="M">Medium</option>
+              <option value="L">Large</option>
+            </select>
+          </div>
+
+          <button className="addToCartBtn" onClick={() => addToCart(shop)}>
+            Add to Cart
+          </button>
+        </div>
+      ))}
+    </div>
+  );
+}
 
 function Cart({ cartItems, removeFromCart }) {
   return (
     <div className="CartPage">
-      <h1 className="cartHeader">CART</h1>
+      <h1 className="cartHeader">SHOPPING CART</h1>
       <div className="cartItemContainer">
         {cartItems.length === 0 ? (
           <p className="emptyCart">
@@ -102,12 +156,21 @@ function Cart({ cartItems, removeFromCart }) {
           </p>
         ) : (
           cartItems.map((item) => (
-            <div key={item.product_id} className="Cart Item">
-              <img src={item.product_pic} alt={item.product_name} />
-              <div>
+            <div key={item.product_id} className="CartItemContainer">
+              <img
+                src={item.product_pic}
+                alt={item.product_name}
+                className="cartItemPic"
+              />
+              <div className="cartItemInfo">
                 <h3>{item.product_name}</h3>
-                <p>{item.makers}</p>
-                <button onClick={() => removeFromCart(item.product_id)}>
+                <p>{item.maker}</p>
+              </div>
+              <div className="trashBtnDiv">
+                <button
+                  onClick={() => removeFromCart(item.product_id)}
+                  className="trashBtn"
+                >
                   Trash
                 </button>
               </div>
@@ -153,7 +216,7 @@ function Shop() {
         <div className="shopsDiv">
           {currentSelection === "Jersey" && <Jersey addToCart={addToCart} />}
           {currentSelection === "ShopHome" && <ShopHome />}
-          {currentSelection === "Training" && <Traning />}
+          {currentSelection === "Training" && <Traning addToCart={addToCart} />}
           {currentSelection === "Cart" && (
             <Cart cartItems={cartItems} removeFromCart={removeFromCart} />
           )}

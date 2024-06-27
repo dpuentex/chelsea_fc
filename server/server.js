@@ -5,29 +5,39 @@ require("dotenv").config();
 const db = require("./models");
 const players = require("./controllers/playersController");
 const shops = require("./controllers/shopsController");
-
-const { Player, Shop } = db;
+const comments = require("./controllers/commentsController"); // Add this line
+const fixtures = require("./controllers/fixturesControllers");
+const { Player, Shop, Fixture } = db;
 
 //Middleware config
 app.use(express.json());
 
+//Routes
 app.use("/api/players", players);
 app.use("/api/shops", shops);
+app.use("/api/fixtures", fixtures);
+app.use("/api/comments", comments); // Add this line
 
-//ROUTES
+//ROOT ROUTES
 app.get("/", async (req, res) => {
   try {
-    const [players, shops] = await Promise.all([
+    const [players, shops, fixtures] = await Promise.all([
       Player.findAll(),
       Shop.findAll(),
+      Fixture.findAll(),
     ]);
 
-    const data = { players, shops };
+    const data = { players, shops, fixtures };
     res.send(data);
   } catch (error) {
     console.log("ERROR while fetching DATA", error);
     res.status(505).send({ message: "Internal server error" });
   }
+});
+
+// Wildcard route for "/api/*"
+app.get("/api/*", (req, res) => {
+  res.send("Wildcard route matched!");
 });
 
 const PORT = process.env.PORT || 7000;

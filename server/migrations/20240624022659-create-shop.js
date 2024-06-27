@@ -15,6 +15,9 @@ module.exports = {
       maker: {
         type: Sequelize.STRING,
       },
+      price: {
+        type: Sequelize.INTEGER,
+      },
       sizeSInven: {
         type: Sequelize.INTEGER,
       },
@@ -23,6 +26,9 @@ module.exports = {
       },
       sizeLInven: {
         type: Sequelize.INTEGER,
+      },
+      category: {
+        type: Sequelize.STRING,
       },
       product_pic: {
         type: Sequelize.STRING,

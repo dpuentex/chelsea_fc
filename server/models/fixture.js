@@ -14,11 +14,15 @@ module.exports = (sequelize, DataTypes) => {
   Fixture.init(
     {
       fixture_id: {
-        type: DataTypes.STRING,
         allowNull: false,
+        autoIncrement: true,
         primaryKey: true,
+        type: DataTypes.INTEGER,
       },
-      opponent: {
+      homeTeam: {
+        type: DataTypes.STRING,
+      },
+      awayTeam: {
         type: DataTypes.STRING,
       },
       location: {
@@ -28,6 +32,12 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.DATE,
       },
       competition: {
+        type: DataTypes.STRING,
+      },
+      homeTeam_logo: {
+        type: DataTypes.STRING,
+      },
+      awayTeam_logo: {
         type: DataTypes.STRING,
       },
     },

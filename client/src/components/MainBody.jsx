@@ -5,6 +5,7 @@ import SideNav from "./SideNav";
 import Home from "./Home";
 import Header from "./Header";
 import Fixtures from "./Fixtures";
+import FixturePage from "./FixturePage";
 import Stadium from "./stadium";
 import Shop from "./Shop";
 import ProductPage from "./productPage";
@@ -25,6 +26,7 @@ function MainBody() {
                 <Route path="/players" element={<PlayersPage />} />
                 <Route path="/player/:id" element={<PlayerPage />} />
                 <Route path="/fixtures" element={<Fixtures />} />
+                <Route path="/fixtures/:id" element={<FixturePage />} />
                 <Route path="/bridge" element={<Stadium />} />
                 <Route path="/shop" element={<Shop />} />
                 <Route path="/shop/:id" element={<ProductPage />} />
