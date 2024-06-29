@@ -20,7 +20,7 @@ app.use("/api/comments", comments); // Add this line
 
 app.use(express.static("../client/dist"));
 
-app.get("*", (res, req) => {
+app.get("*", (req, res) => {
   res.sendFile("../client/dist/index.html");
 });
 
