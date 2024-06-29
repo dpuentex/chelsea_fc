@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 require("dotenv").config();
 
+const path = require("path");
 const db = require("./models");
 const players = require("./controllers/playersController");
 const shops = require("./controllers/shopsController");
@@ -17,11 +18,26 @@ app.use("/api/players", players);
 app.use("/api/shops", shops);
 app.use("/api/fixtures", fixtures);
 app.use("/api/comments", comments); // Add this line
+// Wildcard route for "/api/*"
+app.get("/api/*", (req, res) => {
+  res.send("Wildcard route matched!");
+});
 
-app.use(express.static("../client/dist"));
+app.use(express.static(path.join(__dirname, "../client/dist")));
 
 app.get("*", (req, res) => {
-  res.sendFile("../client/dist/index.html");
+  const options = {
+    root: path.join(__dirname),
+  };
+
+  const fileName = "../client/dist/index.html";
+  res.sendFile(fileName, options, function (err) {
+    if (err) {
+      console.error("Error sending file:", err);
+    } else {
+      console.log("Sent:", fileName);
+    }
+  });
 });
 
 //ROOT ROUTES
@@ -40,11 +56,6 @@ app.get("*", (req, res) => {
 //     res.status(505).send({ message: "Internal server error" });
 //   }
 // });
-
-// Wildcard route for "/api/*"
-app.get("/api/*", (req, res) => {
-  res.send("Wildcard route matched!");
-});
 
 const PORT = process.env.PORT || 7000;
 app.listen(PORT, () => {
