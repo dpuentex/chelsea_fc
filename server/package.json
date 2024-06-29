@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "seed": "npx sequelize db:migrate && npx sequelize db:seed:all",
-    "prod": "npm install && npm run seed  && node server.js",
+    "prod": "npm install && npm run seed && node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
