@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../assets/css/Shop.css";
+import ImageSlider from "./ImageSlider";
 
 function ShopNav({ handleSelectionChange }) {
   return (
@@ -36,7 +37,34 @@ function ShopNav({ handleSelectionChange }) {
 }
 
 function ShopHome() {
-  return <h1>SHOP HOME</h1>;
+  const images = [
+    "https://a.espncdn.com/photo/2023/0710/r1196104_1296x729_16-9.jpg",
+    "https://www.footballshirtculture.com/images/2023/chelsea_2023_24_nike_away_kit.jpg",
+    "https://img.chelseafc.com/image/upload/f_auto,w_1440,c_fill,g_faces,q_90/editorial/Kit%20launch%202023-24/Third-Kit_23-24_EARLY-ACCESS_Web-Hero-Image_2880x1620_V1.jpg",
+    "https://img.chelseafc.com/image/upload/f_auto,w_1440,c_fill,g_faces,q_90/editorial/news/2023/07/03/Training-Kit_2023-24-Web-Hero-Asset_2880x1620.jpg",
+  ];
+  return (
+    <>
+      <ImageSlider images={images} />
+      <div className="JerseySelectContainer">
+        <img
+          src="https://image-cdn.hypb.st/https%3A%2F%2Fuk.hypebeast.com%2Ffiles%2F2023%2F07%2Fchelsea-football-club-new-home-jersey-2.jpg?cbr=1&q=90"
+          alt=""
+          className="JerseySelectImg"
+        />
+        <img
+          src="https://www.thesun.co.uk/wp-content/uploads/2023/08/chelsea-away-kit-time-shine-841400708.jpg?strip=all&w=768"
+          alt=""
+          className="JerseySelectImg"
+        />
+        <img
+          src="https://www.soccerbible.com/media/150965/chelsea-tab-min.jpg"
+          alt=""
+          className="JerseySelectImg"
+        />
+      </div>
+    </>
+  );
 }
 
 function Jersey({ addToCart }) {
@@ -118,7 +146,7 @@ function Traning({ addToCart }) {
     <div className="shopsPageDiv">
       {trainingItems.map((shop) => (
         <div className="shopCardHolder" key={shop.product_id}>
-          <Link to={`/shop/${trainingItems.product_id}`}>
+          <Link to={`/shop/${shop.product_id}`}>
             <div className="shopInfo">
               <img src={shop.product_pic} alt="" className="product_pic" />
               <p>{shop.product_name}</p>

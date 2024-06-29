@@ -18,22 +18,28 @@ app.use("/api/shops", shops);
 app.use("/api/fixtures", fixtures);
 app.use("/api/comments", comments); // Add this line
 
-//ROOT ROUTES
-app.get("/", async (req, res) => {
-  try {
-    const [players, shops, fixtures] = await Promise.all([
-      Player.findAll(),
-      Shop.findAll(),
-      Fixture.findAll(),
-    ]);
+app.use(express.static("../client/dist"));
 
-    const data = { players, shops, fixtures };
-    res.send(data);
-  } catch (error) {
-    console.log("ERROR while fetching DATA", error);
-    res.status(505).send({ message: "Internal server error" });
-  }
+app.get("*", (res, req) => {
+  res.sendFile("../client/dist/index.html");
 });
+
+//ROOT ROUTES
+// app.get("/", async (req, res) => {
+//   try {
+//     const [players, shops, fixtures] = await Promise.all([
+//       Player.findAll(),
+//       Shop.findAll(),
+//       Fixture.findAll(),
+//     ]);
+
+//     const data = { players, shops, fixtures };
+//     res.send(data);
+//   } catch (error) {
+//     console.log("ERROR while fetching DATA", error);
+//     res.status(505).send({ message: "Internal server error" });
+//   }
+// });
 
 // Wildcard route for "/api/*"
 app.get("/api/*", (req, res) => {
