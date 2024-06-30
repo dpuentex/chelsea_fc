@@ -45,6 +45,10 @@ function PlayerPage() {
       )}
       {player && (
         <div className="playerStats">
+          <p>Name: {player.player_name}</p>
+          <p>Player Number: {player.player_number}</p>
+          <p>Date of Birth: {player.dob}</p>
+          <p>Country: {player.country}</p>
           <h3>STATS</h3>
           <p>G/P :{player.games_played}</p>
           <p>⚽️ :{player.goals}</p>

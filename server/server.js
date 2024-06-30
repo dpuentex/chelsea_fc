@@ -6,7 +6,7 @@ const path = require("path");
 const db = require("./models");
 const players = require("./controllers/playersController");
 const shops = require("./controllers/shopsController");
-const comments = require("./controllers/commentsController"); // Add this line
+const comments = require("./controllers/commentsController");
 const fixtures = require("./controllers/fixturesControllers");
 const { Player, Shop, Fixture } = db;
 
@@ -17,8 +17,7 @@ app.use(express.json());
 app.use("/api/players", players);
 app.use("/api/shops", shops);
 app.use("/api/fixtures", fixtures);
-app.use("/api/comments", comments); // Add this line
-// Wildcard route for "/api/*"
+app.use("/api/comments", comments);
 app.get("/api/*", (req, res) => {
   res.send("Wildcard route matched!");
 });
@@ -39,23 +38,6 @@ app.get("*", (req, res) => {
     }
   });
 });
-
-//ROOT ROUTES
-// app.get("/", async (req, res) => {
-//   try {
-//     const [players, shops, fixtures] = await Promise.all([
-//       Player.findAll(),
-//       Shop.findAll(),
-//       Fixture.findAll(),
-//     ]);
-
-//     const data = { players, shops, fixtures };
-//     res.send(data);
-//   } catch (error) {
-//     console.log("ERROR while fetching DATA", error);
-//     res.status(505).send({ message: "Internal server error" });
-//   }
-// });
 
 const PORT = process.env.PORT || 7000;
 app.listen(PORT, () => {
