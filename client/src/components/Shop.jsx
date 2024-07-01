@@ -47,21 +47,36 @@ function ShopHome() {
     <>
       <ImageSlider images={images} />
       <div className="JerseySelectContainer">
-        <img
-          src="https://image-cdn.hypb.st/https%3A%2F%2Fuk.hypebeast.com%2Ffiles%2F2023%2F07%2Fchelsea-football-club-new-home-jersey-2.jpg?cbr=1&q=90"
-          alt=""
-          className="JerseySelectImg"
-        />
-        <img
-          src="https://www.thesun.co.uk/wp-content/uploads/2023/08/chelsea-away-kit-time-shine-841400708.jpg?strip=all&w=768"
-          alt=""
-          className="JerseySelectImg"
-        />
-        <img
-          src="https://www.soccerbible.com/media/150965/chelsea-tab-min.jpg"
-          alt=""
-          className="JerseySelectImg"
-        />
+        <div className="JerseyItem">
+          <img
+            src="https://image-cdn.hypb.st/https%3A%2F%2Fuk.hypebeast.com%2Ffiles%2F2023%2F07%2Fchelsea-football-club-new-home-jersey-2.jpg?cbr=1&q=90"
+            alt=""
+            className="JerseySelectImg"
+          />
+          <Link to={`/shop/1`} className="shopHomeLink">
+            <h3>HOME</h3>
+          </Link>
+        </div>
+        <div className="JerseyItem">
+          <img
+            src="https://www.thesun.co.uk/wp-content/uploads/2023/08/chelsea-away-kit-time-shine-841400708.jpg?strip=all&w=768"
+            alt=""
+            className="JerseySelectImg"
+          />
+          <Link to={`/shop/2`} className="shopHomeLink">
+            <h3>AWAY</h3>
+          </Link>
+        </div>
+        <div className="JerseyItem">
+          <img
+            src="https://image-cdn.hypb.st/https%3A%2F%2Fuk.hypebeast.com%2Ffiles%2F2023%2F09%2Fchelsea-nike-third-kit-2023-24-season-1.jpg?cbr=1&q=90"
+            alt=""
+            className="JerseySelectImg"
+          />
+          <Link to={`/shop/3`} className="shopHomeLink">
+            <h3>THIRD</h3>
+          </Link>
+        </div>
       </div>
     </>
   );

@@ -1,0 +1,105 @@
+/* FixturesPage.css */
+
+.fixturesPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  width: 90vw;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+}
+
+.fixtureLink {
+  text-decoration: none;
+  width: 80vw;
+  height: 50vh;
+}
+
+.fixtureContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 15px 0;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+  color: white;
+  border-radius: 10px;
+  background-image: url("https://www.wallart.com/media/catalog/product/cache/871f459736130e239a3f5e6472128962/w/1/w12017-small.jpg");
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.fixtureContainer:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.ticketCard {
+  position: relative;
+  overflow: hidden;
+}
+
+.fixtureLocation {
+  font-size: 18px;
+  margin-bottom: 10px;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.fixtureLocation::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: #3366ff;
+  transition: width 0.3s ease-in-out;
+}
+
+.fixtureLocation:hover::after {
+  width: 110%;
+}
+
+.teamDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.teamDiv p {
+  margin: 0;
+  font-size: 20px;
+}
+
+.vs {
+  margin: 0 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+}
+
+.teamLogos {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.homeTeamLogo,
+.awayTeamLogo {
+  width: 15vw;
+  object-fit: contain;
+}

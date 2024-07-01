@@ -1,0 +1,77 @@
+.uniqueFixtureDetailPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2em;
+  background-color: #f0f0f0;
+
+  width: 100vw;
+  border-radius: 15px;
+}
+
+.uniqueFixtureDetailContainer {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.uniqueFixtureLocation {
+  font-size: 18px;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #283d8f;
+  position: relative;
+}
+
+.uniqueFixtureLocation::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: #3366ff;
+  transition: width 0.3s ease-in-out;
+}
+
+.uniqueFixtureLocation:hover::after {
+  width: 100%;
+}
+
+.uniqueTeamDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  color: black;
+}
+
+.uniqueTeamName {
+  margin: 0;
+  font-size: 20px;
+}
+
+.uniqueVs {
+  margin: 0 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: blue;
+}
+
+.uniqueTeamLogos {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.uniqueHomeTeamLogo,
+.uniqueAwayTeamLogo {
+  width: 15vw;
+  object-fit: contain;
+}

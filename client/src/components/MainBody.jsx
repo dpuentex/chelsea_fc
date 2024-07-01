@@ -10,6 +10,7 @@ import Stadium from "./stadium";
 import Shop from "./Shop";
 import ProductPage from "./productPage";
 import SupportPage from "./SupportPage";
+import Footer from "./Footer";
 import "../assets/css/MainBody.css";
 
 function MainBody() {
@@ -35,6 +36,7 @@ function MainBody() {
             </div>
           </div>
         </BrowserRouter>
+        <Footer />
       </div>
     </>
   );

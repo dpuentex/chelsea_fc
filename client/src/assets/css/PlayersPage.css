@@ -1,3 +1,5 @@
+/* PlayersPage.css */
+
 * {
   margin: 0;
   padding: 0;
@@ -7,17 +9,35 @@
 .playersPageDiv {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  width: 90vw;
+  background-color: #f4f4f4;
+  border-radius: 10px;
 }
 
 .playerCardHolder {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  margin: 1em;
-  padding: 1em;
-  background-color: #283d8f;
+  margin: 15px 0;
+  padding: 20px;
+  width: 80vw;
+  height: auto;
+  background-color: #3366ff;
+  text-align: center;
+  font-size: 1.5rem;
+  color: white;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
 
-  border-radius: 15px;
+.playerCardHolder:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .playerInfo {
@@ -25,8 +45,11 @@
   flex-direction: column;
   justify-content: space-around;
   color: white;
+  width: 55%;
 }
 
 .profilePic {
   width: 40%;
+  object-fit: cover;
+  border-radius: 10px;
 }

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
-
 import { useParams } from "react-router-dom";
+import "../assets/css/FixturePage.css";
 
 function FixturePage() {
   const { id } = useParams();
@@ -23,11 +23,27 @@ function FixturePage() {
       });
   }, [id]);
   return (
-    <div>
+    <div className="uniqueFixtureDetailPage">
       {fixture && (
-        <div className="teamLogos">
-          <img src={fixture.homeTeam_logo} />
-          <img src={fixture.awayTeam_logo} />
+        <div className="uniqueFixtureDetailContainer">
+          <p className="uniqueFixtureLocation">{fixture.location}</p>
+          <div className="uniqueTeamDiv">
+            <p className="uniqueTeamName">{fixture.homeTeam}</p>
+            <span className="uniqueVs">VS</span>
+            <p className="uniqueTeamName">{fixture.awayTeam}</p>
+          </div>
+          <div className="uniqueTeamLogos">
+            <img
+              className="uniqueHomeTeamLogo"
+              src={fixture.homeTeam_logo}
+              alt={`${fixture.homeTeam} logo`}
+            />
+            <img
+              className="uniqueAwayTeamLogo"
+              src={fixture.awayTeam_logo}
+              alt={`${fixture.awayTeam} logo`}
+            />
+          </div>
         </div>
       )}
     </div>
