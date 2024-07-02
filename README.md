@@ -166,7 +166,6 @@ DB_NAME=your_database_name</code></pre>
     <li><strong>Connect store to the back end</strong>: Connect store to the back end to connect to the inventory so checking out affects the item inventory</li>
       <li><strong>Trivia Game</strong>: Make a Chelsea trivia game that has a high score available in the user account with a leader board that posts the top 10 USERS' score with a privacy option for those who don't want their userPublic</li>
 
-
 </ul>
 
 ## Usage
@@ -179,3 +178,7 @@ DB_NAME=your_database_name</code></pre>
     <pre><code>npm start</code></pre>
   </li>
   <li>Open your browser and navigate to <a href="http://localhost:3000">http://localhost:3000</a>.</li>
+
+## Link to DEPLOY
+
+<li>https://chelsea-fc.onrender.com </li>
