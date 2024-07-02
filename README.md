@@ -1,165 +1,170 @@
-# chelsea_fc
+# Chelsea FC MOCK
 
-Chelsea FC website
+## Table of Contents
 
-Chelsea FC MOCK
-Table of Contents
-Introduction
-Features
-Technologies Used
-Installation
-Backend Setup
-Frontend Setup
-Project Structure
-API Endpoints
-Components
-Usage
-License
+- [Introduction](#introduction)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+  - [Backend Setup](#backend-setup)
+  - [Frontend Setup](#frontend-setup)
+- [Project Structure](#project-structure)
+- [API Endpoints](#api-endpoints)
+- [Components](#components)
+- [Usage](#usage)
+- [License](#license)
 
-Introduction
-Chelsea FC MOCK is a full-stack web application designed for Chelsea club-related activities. The app features various sections such as players, fixtures, a shop, and a stadium. Users can view player details, fixture details, browse and purchase items from the shop, and leave comments.
+## Introduction
 
-Features
-Players Section: View all players, and individual player details including stats.
-Fixtures Section: View all fixtures and individual fixture details.
-Shop Section: Browse and purchase items, including jerseys and training kits.
-Stadium Section: Information and image slider for the stadium.
-Comments Section: Leave and view comments on fixtures and players.
-Responsive Design: Optimized for both desktop and mobile devices.
-Technologies Used
-Frontend: React, React Router, CSS (with custom styling), Slick Carousel for image sliders.
-Backend: Express, Node.js, dotenv for environment variables.
-Database: Assumed to be using a relational database (e.g., MySQL, PostgreSQL).
-Miscellaneous: react-icons for icons.
-Installation
-Backend Setup
-Clone the repository:
+<p>Chelsea FC MOCK is a full-stack web application designed for Chelsea club-related activities. The app features various sections such as players, fixtures, a shop, and a stadium. Users can view player details, fixture details, browse and purchase items from the shop, and leave comments.</p>
 
-bash
-Copy code
-git clone https://github.com/dpuentex/chelsea_fc.git
-cd chelsea_fc/backend
-Install dependencies:
+## Features
 
-bash
-Copy code
-npm install
-Create a .env file in the backend directory and set your environment variables:
+<ul>
+  <li><strong>Players Section</strong>: View all players, and individual player details including stats.</li>
+  <li><strong>Fixtures Section</strong>: View all fixtures and individual fixture details.</li>
+  <li><strong>Shop Section</strong>: Browse and purchase items, including jerseys and training kits.</li>
+  <li><strong>Stadium Section</strong>: Information and image slider for the stadium.</li>
+  <li><strong>Comments Section</strong>: Leave and view comments on fixtures and players.</li>
+  <li><strong>Responsive Design</strong>: Optimized for both desktop and mobile devices.</li>
+</ul>
 
-env
-Copy code
-PORT=7000
+## Technologies Used
+
+<ul>
+  <li><strong>Frontend</strong>: React, React Router, CSS (with custom styling), Slick Carousel for image sliders.</li>
+  <li><strong>Backend</strong>: Express, Node.js, dotenv for environment variables.</li>
+  <li><strong>Database</strong>: Assumed to be using a relational database (e.g., MySQL, PostgreSQL).</li>
+  <li><strong>Miscellaneous</strong>: react-icons for icons.</li>
+</ul>
+
+## Installation
+
+### Backend Setup
+
+<ol>
+  <li>Clone the repository:
+    <pre><code>git clone https://github.com/dpuentex/chelsea_fc.git
+cd chelsea_fc/backend</code></pre>
+  </li>
+  <li>Install dependencies:
+    <pre><code>npm install</code></pre>
+  </li>
+  <li>Create a `.env` file in the backend directory and set your environment variables:
+    <pre><code>PORT=7000
 DB_HOST=your_database_host
 DB_USER=your_database_user
 DB_PASSWORD=your_database_password
-DB_NAME=your_database_name
-Start the backend server:
+DB_NAME=your_database_name</code></pre>
+  </li>
+  <li>Start the backend server:
+    <pre><code>npm start</code></pre>
+  </li>
+</ol>
 
-bash
-Copy code
-npm start
-Frontend Setup
-Navigate to the client directory:
+### Frontend Setup
 
-bash
-Copy code
-cd ../client
-Install dependencies:
+<ol>
+  <li>Navigate to the client directory:
+    <pre><code>cd ../client</code></pre>
+  </li>
+  <li>Install dependencies:
+    <pre><code>npm install</code></pre>
+  </li>
+  <li>Start the frontend development server:
+    <pre><code>npm start</code></pre>
+  </li>
+</ol>
 
-bash
-Copy code
-npm install
-Start the frontend development server:
+## Project Structure
 
-bash
-Copy code
-npm start
-Project Structure
-plaintext
-Copy code
-sports-club-app/
-│
+<pre><code>chelsea_fc/
 ├── backend/
-│ ├── controllers/
-│ │ ├── commentsController.js
-│ │ ├── fixturesController.js
-│ │ ├── playersController.js
-│ │ └── shopsController.js
-│ ├── models/
-│ │ ├── Player.js
-│ │ ├── Shop.js
-│ │ └── Fixture.js
-│ ├── .env
-│ ├── index.js
-│ └── package.json
-│
+│   ├── controllers/
+│   │   ├── commentsController.js
+│   │   ├── fixturesController.js
+│   │   ├── playersController.js
+│   │   └── shopsController.js
+│   ├── models/
+│   │   ├── Player.js
+│   │   ├── Shop.js
+│   │   └── Fixture.js
+│   ├── .env
+│   ├── index.js
+│   └── package.json
 ├── client/
-│ ├── public/
-│ ├── src/
-│ │ ├── assets/
-│ │ │ ├── css/
-│ │ │ ├── imgs/
-│ │ │ └── extra_data/
-│ │ ├── components/
-│ │ │ ├── Footer.js
-│ │ │ ├── Header.js
-│ │ │ ├── ImageSlider.js
-│ │ │ ├── PlayersPage.js
-│ │ │ ├── PlayerPage.js
-│ │ │ ├── Fixtures.js
-│ │ │ ├── FixturePage.js
-│ │ │ ├── Shop.js
-│ │ │ ├── SideNav.js
-│ │ │ └── SupportPage.js
-│ │ ├── App.js
-│ │ ├── index.js
-│ │ └── package.json
-│ └── package.json
-└── README.md
-API Endpoints
-Players
+│   ├── public/
+│   ├── src/
+│   │   ├── assets/
+│   │   │   ├── css/
+│   │   │   ├── imgs/
+│   │   │   └── extra_data/
+│   │   ├── components/
+│   │   │   ├── Footer.js
+│   │   │   ├── Header.js
+│   │   │   ├── ImageSlider.js
+│   │   │   ├── PlayersPage.js
+│   │   │   ├── PlayerPage.js
+│   │   │   ├── Fixtures.js
+│   │   │   ├── FixturePage.js
+│   │   │   ├── Shop.js
+│   │   │   ├── SideNav.js
+│   │   │   └── SupportPage.js
+│   │   ├── App.js
+│   │   ├── index.js
+│   │   └── package.json
+│   └── package.json
+└── README.md</code></pre>
 
-GET /api/players: Get all players.
-GET /api/players/:id: Get player by ID.
-Shops
+## API Endpoints
 
-GET /api/shops: Get all shop items.
-GET /api/shops/:id: Get shop item by ID.
-Fixtures
+### Players
 
-GET /api/fixtures: Get all fixtures.
-GET /api/fixtures/:id: Get fixture by ID.
-Comments
+<ul>
+  <li><strong>GET /api/players</strong>: Get all players.</li>
+  <li><strong>GET /api/players/:id</strong>: Get player by ID.</li>
+</ul>
 
-GET /api/comments: Get all comments.
-Components
-PlayersPage
-Displays a list of all players with their names, numbers, and profile pictures.
+### Shops
 
-PlayerPage
-Shows detailed information about a selected player, including stats and profile picture.
+<ul>
+  <li><strong>GET /api/shops</strong>: Get all shop items.</li>
+  <li><strong>GET /api/shops/:id</strong>: Get shop item by ID.</li>
+</ul>
 
-Fixtures
-Lists all fixtures with their locations, home and away teams, and their logos.
+### Fixtures
 
-FixturePage
-Shows detailed information about a selected fixture.
+<ul>
+  <li><strong>GET /api/fixtures</strong>: Get all fixtures.</li>
+  <li><strong>GET /api/fixtures/:id</strong>: Get fixture by ID.</li>
+</ul>
 
-Shop
-Main shop page with sections for jerseys, training kits, and a shopping cart.
+### Comments
 
-ImageSlider
-Component to display image sliders, used in the shop and stadium sections.
+<ul>
+  <li><strong>GET /api/comments</strong>: Get all comments.</li>
+</ul>
 
-SideNav
-Side navigation bar for navigating between different sections of the app.Inspired by YouTube Video
-Header and Footer
-Common header and footer components used across the app.
+## Components
 
-Usage
-Run the backend server (npm start in the backend directory).
-Run the frontend development server (npm start in the client directory).
-Open your browser and navigate to http://localhost:3000.
+<ul>
+  <li><strong>PlayersPage</strong>: Displays a list of all players with their names, numbers, and profile pictures.</li>
+  <li><strong>PlayerPage</strong>: Shows detailed information about a selected player, including stats and profile picture.</li>
+  <li><strong>Fixtures</strong>: Lists all fixtures with their locations, home and away teams, and their logos.</li>
+  <li><strong>FixturePage</strong>: Shows detailed information about a selected fixture.</li>
+  <li><strong>Shop</strong>: Main shop page with sections for jerseys, training kits, and a shopping cart.</li>
+  <li><strong>ImageSlider</strong>: Component to display image sliders, used in the shop and stadium sections.</li>
+  <li><strong>SideNav</strong>: Side navigation bar for navigating between different sections of the app.</li>
+  <li><strong>Header and Footer</strong>: Common header and footer components used across the app.</li>
+</ul>
 
-License
-This project is licensed under the MIT License.
+## Usage
+
+<ol>
+  <li>Run the backend server:
+    <pre><code>npm start</code></pre>
+  </li>
+  <li>Run the frontend development server:
+    <pre><code>npm start</code></pre>
+  </li>
+  <li>Open your browser and navigate to <a href="http://localhost:3000">http://localhost:3000</a>.</li>
