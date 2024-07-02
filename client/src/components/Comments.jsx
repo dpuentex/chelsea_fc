@@ -43,7 +43,7 @@ const Comments = () => {
 
   return (
     <div className="comments-container">
-      <h2>Comments</h2>
+      <h2>Tell us about your time with us!!!</h2>
       <div className="comment-input">
         <input
           type="text"
