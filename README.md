@@ -158,6 +158,17 @@ DB_NAME=your_database_name</code></pre>
   <li><strong>Header and Footer</strong>: Common header and footer components used across the app.</li>
 </ul>
 
+## Future add-ons
+
+  </li>
+  <li><strong>News Page</strong>: News Page, with Slide article and newspaper layout blog on CHELSEA FC.</li>
+  <li><strong>Create account/Log-in</strong>: Create account/Log-in have purchased items be in history</li>
+    <li><strong>Connect store to the back end</strong>: Connect store to the back end to connect to the inventory so checking out affects the item inventory</li>
+      <li><strong>Trivia Game</strong>: Make a Chelsea trivia game that has a high score available in the user account with a leader board that posts the top 10 USERS' score with a privacy option for those who don't want their userPublic</li>
+
+
+</ul>
+
 ## Usage
 
 <ol>
